@@ -38,26 +38,40 @@ export class LoginComponent implements OnInit {
   }
 
   //event binding 
-  login() {
+   login()
+   {
+     
+     
     var acno = this.acno
+    
+
+    
     var pswd = this.pswd
+    
+    
     let database = this.database
-    if (acno in database) {
-      if (pswd == database[acno]["pwd"]) {
-        alert("login successful!!!!!!!!!!!!!")
-      }
-      else
-       {
-        alert("incorrect password..........")
-      }
-    }
-    else 
+    if (acno in database)
     {
-      alert("user does not exist........................")
+      if(pswd == database[acno]["pwd"]) 
+            {
+                alert("Login successfully")
+           }
 
+
+           else{
+             alert("Incorrect password..........")
+           }
     }
-  }
-}
 
 
 
+
+
+   
+    else{
+     alert("User does not exist...........")
+    }
+     
+            
+  
+  }}
