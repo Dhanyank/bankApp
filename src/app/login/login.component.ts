@@ -17,12 +17,12 @@ export class LoginComponent implements OnInit {
   acno = ""
   pswd = ""
   //database
-  database: any = {
-    1000: { acno: 1000, uname: "Meera", pwd: 1000, balance: 5000 },
-   1001: { acno: 1001, uname: "Seema", pwd: 1001, balance: 3000 },
-    1002: { acno: 1002, uname: "Raju", pwd: 1002, balance: 8000 }
+  //database: any = {
+    //1000: { acno: 1000, uname: "Meera", pwd: 1000, balance: 5000 },
+   //1001: { acno: 1001, uname: "Seema", pwd: 1001, balance: 3000 },
+    //1002: { acno: 1002, uname: "Raju", pwd: 1002, balance: 8000 }
 
-  }
+  //}
   constructor(private router :Router,private ds:DataService) { }
 
   ngOnInit(): void {
@@ -42,19 +42,11 @@ export class LoginComponent implements OnInit {
   //event binding 
    login()
    {
-     
-     
-    var acno = this.acno
-    
-
-    
+     var acno = this.acno
     var pswd = this.pswd
+    const result=this.ds.login(acno,pswd)
+    if (result)
     
-    
-    let database = this.ds.database
-    if (acno in database)
-    {
-      if(pswd == database[acno]["pwd"]) 
             {
                 alert("Login successfully")
                  this.router.navigateByUrl("dashboard")
@@ -62,20 +54,5 @@ export class LoginComponent implements OnInit {
            }
 
 
-           else{
-             alert("Incorrect password..........")
-           }
-    }
-
-
-
-
-
-   
-    else{
-     alert("User does not exist...........")
-    }
-     
-            
-  
-  }}
+          }
+        }

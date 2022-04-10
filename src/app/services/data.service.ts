@@ -31,7 +31,56 @@ register(uname:any,acno:any,pwd:any)
       
       return true
     }
+  }
+  login(acno:any,pswd:any)
+  {
+    let database=this.database
+    if(acno in database)
+    {
+      if(pswd==database[acno]["pwd"])
+      {
+        return true
+      }
+      else{
+        alert("Incorrect password......")
+      
+      return false
+    }
+  }
+
+
+  
+  else
+  {
+    alert("User does not exist...")
+    return false
+  }
 }
 
 
+//deposit
+
+deposit(acno:any,pswd:any,amt:any)
+{
+let database=this.database
+var amount=parseInt(amt)
+if(acno in database)
+{
+
+  if(pswd==database[acno]["pwd"])
+  {
+    
+database[acno]["balance"]+=amount
+return database[acno]["balance"]+=amount
+  }
+  else{
+    alert("Incorrect password")
+    return false
+  }
+}
+else{
+  alert("User does not exist")
+  return false
+}
+}
 }
