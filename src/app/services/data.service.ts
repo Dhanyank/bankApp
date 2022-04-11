@@ -83,4 +83,38 @@ else{
   return false
 }
 }
+
+//withdrawal
+withdraw(acno:any,pswd:any,amt:any)
+{
+let database=this.database
+var amount=parseInt(amt)
+if(acno in database)
+{
+
+  if(pswd==database[acno]["pwd"])
+  {
+    if(database[acno]["balance"]>amount)
+{
+
+
+database[acno]["balance"]-=amount
+return database[acno]["balance"]+=amount
+  }
+  else{
+    alert("Insufficient balance.....")
+    return false
+  }
+  }
+else{
+  alert("Incorrect password")
+  return false
 }
+}
+else{
+  alert("User does not exist")
+  return false
+}
+}
+}
+
