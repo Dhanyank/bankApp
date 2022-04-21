@@ -12,21 +12,27 @@
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
 
-                        <input type= "text" name="uname" formControlName="uname" class="form-control" placeholder="User name Please...."
-                            id="login_uname" required>
+                        <input type="text" name="uname" formControlName="uname" class="form-control"
+                            placeholder="User name Please...." id="login_uname" required>
 
 
                     </div>
-                    <div *ngIf="this.registerForm.get('uname')?.touched&&this.registerForm.get('uname')?.errors" style="color: red;">Invalid username..</div>
+                    <div *ngIf="this.registerForm.get('uname')?.touched&&this.registerForm.get('uname')?.errors"
+                        style="color: red;">Invalid username..</div>
+
+                    
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
 
-                        <input type= "text" name="acno" formControlName="acno" class="form-control" placeholder="Account number"
-                            id="login_accno" required>
-
+                    
+                    <input type="text" name="acno" formControlName="acno" class="form-control"
+                        placeholder="Account number" id="login_accno" required>
                     </div>
+                    <div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors"
+                        style="color: red;">Invalid Account number..</div>
+
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -34,16 +40,21 @@
                         <input type="password" name="pswd" formControlName="pswd" class="form-control"
                             placeholder="Password" id="login_password" required>
                     </div>
+                    <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors"
+                        style="color: red;">Invalid password format...</div>
 
                     <div class="form-group">
                         <!-- event binding  (click)="login()" -->
-                        <input type="submit" value="Register"
-                            class="btn float-right login_btn " style="width:50%">
+                        <input type="submit" value="Register" class="btn float-right login_btn " style="width:50%">
                     </div>
+
+
+
+                    <!-- routerLink for same as href -->
+
+                    <p style="color:white;align-items:baseline;">Existing user? <a routerLink="">Log in</a></p>
                 </form>
             </div>
-            <!-- routerLink for same as href -->
-            <p style="color:white;align-items:baseline;">Existing user? <a routerLink="">Log in</a></p>
         </div>
     </div>
 </div>
