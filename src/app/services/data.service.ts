@@ -18,8 +18,39 @@ export class DataService {
   }
 
 
-  constructor() { }
+  constructor() { 
+    this.getDetails()
+  }
+//save data in to a local storage
+saveDetails(){
+  localStorage.setItem("database",JSON.stringify(this.database))
+  if(this.currentAcno)
+  {
+    localStorage.setItem("currentAcno",JSON.stringify(this.currentAcno))
+  }
+  if(this.currentUser){
+    localStorage.setItem("currentUser",JSON.stringify(this.currentUser))
+  }
+}
 
+//to get data from local storage
+getDetails(){
+  if(localStorage.getItem("database"))
+  {
+ this.database= JSON.parse(localStorage.getItem("database")||``)
+
+  
+   if(localStorage.getItem("currentAcno"))
+  { 
+    this.currentAcno= JSON.parse(localStorage.getItem("currentAcno")||``)
+  }
+  
+  if(localStorage.getItem("currentUser"))
+  { 
+    this.currentUser= JSON.parse(localStorage.getItem("currentUser")||``)
+  }
+}
+}
 
 register(uname:any,acno:any,pwd:any)
 {
@@ -37,7 +68,7 @@ register(uname:any,acno:any,pwd:any)
         transaction:[]
       }
       //console.log(database);
-      
+      this.saveDetails()
       return true
     }
   }
@@ -52,7 +83,7 @@ register(uname:any,acno:any,pwd:any)
       {
       this.currentUser=database[acno]["uname"]
       this.currentAcno=acno
-      
+      this.saveDetails()
         return true
       }
       else{
@@ -89,7 +120,8 @@ database[acno]["transaction"].push({
   type:"credit",
   amount:amount
 })
-return database[acno]["balance"]+=amount
+this.saveDetails()
+return database[acno]["balance"]
   }
   else{
     alert("Incorrect password")
@@ -118,8 +150,10 @@ if(acno in database)
 
 database[acno]["balance"]-=amount
 database[acno]["transaction"].push({type:"Debit",amount:amount})
-return database[acno]["balance"]-=amount
-  }
+
+this.saveDetails()
+return database[acno]["balance"]
+}
   else{
     alert("Insufficient balance.....")
     return false
@@ -136,7 +170,7 @@ else{
 }
 }
 //transaction
-transaction(acno:any): any
+transaction(acno:any)
 {
   return this.database[acno].transaction
 }
