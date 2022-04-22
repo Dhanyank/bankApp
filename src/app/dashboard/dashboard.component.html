@@ -1,14 +1,21 @@
 <nav class="navbar navbar-light bg-dark ">
     <a class="navbar-brand  " href="#" style="color:rgb(85, 98, 237);"><b>&#169; HAFC Bank Pvt.Ltd </b></a>
     <span class="quote text-light">Giving you freedom...</span>
-
-    <br>
+<!-- button for logout -->
+    <button (click)="logout()" class="btn btn-warning">Log out</button>
     
 </nav>
 <h1 style="color: white;">Welcome {{user}}</h1>
+<!-- for getting time of login -->
+<h4 style="color:white" >Login details are  :{{loginDate|date:'fullDate'|uppercase}}</h4>
 <a routerLink="/transaction">Transaction History</a> 
 
-<div class="container col-md-12 mt-0">
+
+<button (click)="deleteFromParent()" style="float: right;" class="btn btn-danger">Delete</button>
+<app-delete-confirm  [item]=acno></app-delete-confirm>
+
+
+<div class="container col-md-6 mt-0">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">

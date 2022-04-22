@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
 //import { TransactionComponent } from './transaction/transaction.component';
 //import { RegisterComponent } from './register/register.component';
 
@@ -19,6 +20,7 @@ import { TransactionComponent } from './transaction/transaction.component';
     RegisterComponent,
     TransactionComponent,
     TransactionComponent,
+    DeleteConfirmComponent,
     
   ],
   imports: [
