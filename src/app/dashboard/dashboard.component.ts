@@ -88,4 +88,14 @@ this.router.navigateByUrl("")
 this.acno=JSON.parse(localStorage.getItem("currentAcno")||``)
     }
   
+
+onCancel()
+{
+this.acno=""
 }
+onDelete(event:any)
+{
+  alert("Delete account"+event)
+}
+}
+

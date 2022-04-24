@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
+import { HighightDirective } from './directives/highight.directive';
 //import { TransactionComponent } from './transaction/transaction.component';
 //import { RegisterComponent } from './register/register.component';
 
@@ -21,6 +22,7 @@ import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.componen
     TransactionComponent,
     TransactionComponent,
     DeleteConfirmComponent,
+    HighightDirective,
     
   ],
   imports: [
