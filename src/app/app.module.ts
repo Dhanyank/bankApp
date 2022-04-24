@@ -10,9 +10,10 @@ import { RegisterComponent } from './register/register.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
 import { HighightDirective } from './directives/highight.directive';
+import { AnimationDemoComponent } from './animation-demo/animation-demo.component';
 //import { TransactionComponent } from './transaction/transaction.component';
 //import { RegisterComponent } from './register/register.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,13 +24,15 @@ import { HighightDirective } from './directives/highight.directive';
     TransactionComponent,
     DeleteConfirmComponent,
     HighightDirective,
+    AnimationDemoComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

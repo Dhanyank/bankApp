@@ -9,13 +9,11 @@
 <!-- for getting time of login -->
 <h4 style="color:white" >Login details are  :{{loginDate|date:'fullDate'|uppercase}}</h4>
 <a routerLink="/transaction">Transaction History</a> 
-
+<!--  animation  -->
+ <!-- <app-animation-demo></app-animation-demo> -->
 
 <button (click)="deleteFromParent()" style="float: right;" class="btn btn-danger">Delete</button>
-
-
-<!-- child selector -->
-<app-delete-confirm  (onDelete)="onDelete($event)"(onCancel)="onCancel()" [item]="acno" ></app-delete-confirm> 
+<app-delete-confirm (onDelete)="onDelete($event)"(onCancel)="onCancel()" [item]="acno" ></app-delete-confirm> 
 
 <div   [ngClass]="acno? 'style1':''" class="container col-md-6 mt-0">
     <div class="d-flex justify-content-center h-100">
