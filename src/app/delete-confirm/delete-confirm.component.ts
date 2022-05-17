@@ -19,8 +19,8 @@ cancel()
 {
  this.onCancel.emit() 
 }
-//delete()//
-//{
-  //this.delete.emit(this.item)
-//}
+delete()
+{
+  this.onDelete.emit(this.item)
+}
 }

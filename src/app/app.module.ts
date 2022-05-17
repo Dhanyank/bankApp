@@ -13,7 +13,10 @@ import { HighightDirective } from './directives/highight.directive';
 import { AnimationDemoComponent } from './animation-demo/animation-demo.component';
 //import { TransactionComponent } from './transaction/transaction.component';
 //import { RegisterComponent } from './register/register.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import{HttpClientModule} from '@angular/common/http'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
